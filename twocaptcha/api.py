@@ -102,7 +102,7 @@ class ApiClient():
 
         try:
             current_url_out = 'https://'+self.post_url+'/res.php'
-            resp = requests.get(current_url_out, params=kwargs)
+            resp = requests.get(current_url_out, params=kwargs, verify=False)
 
             if resp.status_code != 200:
                 raise NetworkException(f'bad response: {resp.status_code}')
